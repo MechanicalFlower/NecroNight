@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/doorway0.obj-355eee7f272a0667c922b058104c9aa8.mesh"
+
+[deps]
+
+files=[ "res://.import/doorway0.obj-355eee7f272a0667c922b058104c9aa8.mesh" ]
+
+source_file="res://assets/mansion/doorway0.obj"
+dest_files=[ "res://.import/doorway0.obj-355eee7f272a0667c922b058104c9aa8.mesh", "res://.import/doorway0.obj-355eee7f272a0667c922b058104c9aa8.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

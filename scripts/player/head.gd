@@ -5,10 +5,12 @@ export(NodePath) var cam_path := NodePath("Camera")
 export var mouse_sensitivity := 2.0
 export var y_limit := 90.0
 
-var mouse_axis := Vector2()
-var rot := Vector3()
+var mouse_axis := Vector2.ZERO
+var rot := Vector3.ZERO
 
 onready var cam: Camera = get_node(cam_path)
+
+onready var input := get_node("%Input") as InputWrapper
 
 
 # Called when the node enters the scene tree for the first time.
@@ -20,14 +22,18 @@ func _ready() -> void:
 # Called when there is an input event
 func _input(event: InputEvent) -> void:
 	# Mouse look (only if the mouse is captured).
-	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+	if (
+		input._player_index == 0
+		and event is InputEventMouseMotion
+		and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED
+	):
 		mouse_axis = event.relative
 		camera_rotation()
 
 
 # Called every physics tick. 'delta' is constant
 func _physics_process(delta: float) -> void:
-	var joystick_axis := Input.get_vector("lookleft", "lookright", "lookdown", "lookup")
+	var joystick_axis := input.get_vector("lookleft", "lookright", "lookdown", "lookup")
 	if joystick_axis != Vector2.ZERO:
 		mouse_axis = joystick_axis * 1000.0 * delta
 		camera_rotation()

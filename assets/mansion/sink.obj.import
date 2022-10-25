@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/sink.obj-62d82b6668255d4fded6ea2456c8bd1f.mesh"
+
+[deps]
+
+files=[ "res://.import/sink.obj-62d82b6668255d4fded6ea2456c8bd1f.mesh" ]
+
+source_file="res://assets/mansion/sink.obj"
+dest_files=[ "res://.import/sink.obj-62d82b6668255d4fded6ea2456c8bd1f.mesh", "res://.import/sink.obj-62d82b6668255d4fded6ea2456c8bd1f.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

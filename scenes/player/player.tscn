@@ -1,18 +1,31 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://addons/procedural_crosshair/procedural_crosshair.gd" type="Script" id=1]
 [ext_resource path="res://scripts/player/sprint.gd" type="Script" id=2]
 [ext_resource path="res://scenes/player/head.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/player/movement_controller.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/player/input_wrapper.gd" type="Script" id=5]
+
+[sub_resource type="CapsuleMesh" id=1]
+
+[sub_resource type="CubeMesh" id=2]
 
 [node name="Player" instance=ExtResource( 4 )]
 
 [node name="Head" parent="." index="1" instance=ExtResource( 3 )]
 
-[node name="Sprint" type="Node" parent="." index="2"]
+[node name="Body" type="MeshInstance" parent="." index="2"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+mesh = SubResource( 1 )
+
+[node name="Weapon" type="MeshInstance" parent="Body" index="0"]
+transform = Transform( 0.151635, 0, 0, 0, 0.748722, -2.59701e-08, 0, -2.59701e-08, 0.154595, 0.557638, -1.26719, 5.53908e-08 )
+mesh = SubResource( 2 )
+
+[node name="Sprint" type="Node" parent="." index="3"]
 script = ExtResource( 2 )
 
-[node name="HUD" type="Control" parent="." index="3"]
+[node name="HUD" type="Control" parent="." index="4"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -21,9 +34,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="Crosshair" type="Control" parent="HUD/CenterContainer" index="0"]
-margin_left = 480.0
-margin_top = 360.0
-margin_right = 480.0
-margin_bottom = 360.0
+margin_left = 512.0
+margin_top = 300.0
+margin_right = 512.0
+margin_bottom = 300.0
 script = ExtResource( 1 )
 markers_count = 0
+
+[node name="Input" type="Node" parent="." index="5"]
+unique_name_in_owner = true
+script = ExtResource( 5 )

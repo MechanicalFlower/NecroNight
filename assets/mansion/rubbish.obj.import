@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/rubbish.obj-48fcbd45d088a2e651c123475f42a95c.mesh"
+
+[deps]
+
+files=[ "res://.import/rubbish.obj-48fcbd45d088a2e651c123475f42a95c.mesh" ]
+
+source_file="res://assets/mansion/rubbish.obj"
+dest_files=[ "res://.import/rubbish.obj-48fcbd45d088a2e651c123475f42a95c.mesh", "res://.import/rubbish.obj-48fcbd45d088a2e651c123475f42a95c.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/candle_holder.obj-4d1dd2eaf3df43407029588e576f227c.mesh"
+
+[deps]
+
+files=[ "res://.import/candle_holder.obj-4d1dd2eaf3df43407029588e576f227c.mesh" ]
+
+source_file="res://assets/mansion/candle_holder.obj"
+dest_files=[ "res://.import/candle_holder.obj-4d1dd2eaf3df43407029588e576f227c.mesh", "res://.import/candle_holder.obj-4d1dd2eaf3df43407029588e576f227c.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

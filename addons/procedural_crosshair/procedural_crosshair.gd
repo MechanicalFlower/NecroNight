@@ -107,7 +107,7 @@ func set_markers_spread(p_markers_spread: float) -> void:
 func _enter_tree() -> void:
 	update()
 
-func _draw() -> void:
+func draw() -> void:
 	# Shape point array to be drawn
 	var shape_points := []
 	# Shape color array to be drawn

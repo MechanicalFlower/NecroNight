@@ -3,14 +3,15 @@ extends Node
 export var sprint_speed := 16
 export var fov_multiplier := 1.05
 
-onready var controller := get_parent()
+onready var controller := get_parent() as MovementController
 onready var camera := get_parent().get_node("Head").cam as Camera
 
 onready var normal_speed: int = controller.speed
 onready var normal_fov: float = camera.fov
 
+onready var input := get_node("%Input") as InputWrapper
 
-# Called every physics tick. 'delta' is constant
+
 func _physics_process(delta: float) -> void:
 	if can_sprint():
 		controller.speed = sprint_speed
@@ -23,6 +24,6 @@ func _physics_process(delta: float) -> void:
 func can_sprint() -> bool:
 	return (
 		controller.is_on_floor()
-		and Input.is_action_pressed("sprint")
+		and input.is_action_pressed("sprint")
 		and controller.input_axis.x >= 0.5
 	)

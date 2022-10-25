@@ -9,10 +9,10 @@ export var deceleration := 10
 export(float, 0.0, 1.0, 0.05) var air_control := 0.3
 export var jump_height := 10
 
-var direction := Vector3()
-var input_axis := Vector2()
-var velocity := Vector3()
-var snap := Vector3()
+var direction := Vector3.ZERO
+var input_axis := Vector2.ZERO
+var velocity := Vector3.ZERO
+var snap := Vector3.ZERO
 var up_direction := Vector3.UP
 var stop_on_slope := true
 
@@ -21,10 +21,12 @@ onready var floor_max_angle: float = deg2rad(45.0)
 # Get the gravity from the project settings to be synced with RigidDynamicBody nodes.
 onready var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") * gravity_multiplier
 
+onready var input := get_node("%Input") as InputWrapper
+
 
 # Called every physics tick. 'delta' is constant
 func _physics_process(delta) -> void:
-	input_axis = Input.get_vector("move_back", "move_forward", "move_left", "move_right")
+	input_axis = input.get_vector("move_back", "move_forward", "move_left", "move_right")
 
 	direction_input()
 
@@ -35,7 +37,7 @@ func _physics_process(delta) -> void:
 		if velocity.y < 0:
 			velocity.y = 0
 
-		if Input.is_action_just_pressed("jump"):
+		if input.is_action_just_pressed("jump"):
 			snap = Vector3.ZERO
 			velocity.y = jump_height
 	else:
