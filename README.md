@@ -9,6 +9,12 @@ A survival horror FPS, in a PSX style, game made with [Godot Engine](https://god
 
 </div>
 
+## Contributing
+
+We welcome community contributions to this project.
+
+Please read our [Contributor Guide](CONTRIBUTING.md) for more information on how to get started.
+
 ## References
 
 - [First Person Template](https://github.com/Whimfoome/godot-FirstPersonStarter)
